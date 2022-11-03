@@ -15,8 +15,8 @@ Klonlama işleminin ardından live server açarak kodu önizleyebilirsiniz.
 ## Ekran Görüntüleri
 
 <div>
-<img src="https://github.com/ahmetenesbahar/drawing-app/blob/main/assets/screenshots/drawingApp.png">
-<img src="https://github.com/ahmetenesbahar/drawing-app/blob/main/assets/screenshots/drawingApp1.png">
+<img src="https://github.com/ahmetenesbahar/drawing-app/blob/main/screenshots/drawingApp.png">
+<img src="https://github.com/ahmetenesbahar/drawing-app/blob/main/screenshots/drawingApp1.png">
 
 </div>
 
