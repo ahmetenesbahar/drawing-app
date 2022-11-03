@@ -14,7 +14,7 @@ body {
 
 canvas {
   border: 2px solid steelblue;
-  cursor: url("pencilCursor.png"), auto;
+  cursor: url("pencilCursor.png") 2 48, pointer
 }
 
 .toolbox {
