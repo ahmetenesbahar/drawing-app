@@ -5,6 +5,8 @@ const sizeEl = document.getElementById("size");
 const colorEl = document.getElementById("color");
 const clearEl = document.getElementById("clear");
 
+//Core Drawing Functionality (with some research)
+
 const ctx = canvas.getContext("2d");
 
 let size = 10;
@@ -94,4 +96,50 @@ colorEl.addEventListener("change", (e) => {
 
 clearEl.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+//Eraser and Pencil Actions (my own algorithm)
+
+const eraser = document.getElementById("eraser");
+const pencil = document.getElementById("pencil");
+
+eraser.addEventListener("click", () => {
+  localStorage.setItem("colorEl", JSON.stringify(color));
+  color = "#f5f5f5";
+  colorEl.disabled = true;
+  canvas.classList.add("eraseractive");
+  eraser.classList.add("eraseractive");
+  colorEl.classList.add("eraseractive");
+  canvas.classList.remove("pencilactive");
+  eraser.classList.remove("pencilactive");
+  colorEl.classList.remove("pencilactive");
+});
+
+pencil.addEventListener("click", () => {
+  JSON.parse(localStorage.getItem("colorEl"));
+  color = colorEl.value;
+  colorEl.disabled = false;
+  canvas.classList.remove("eraseractive");
+  eraser.classList.remove("eraseractive");
+  colorEl.classList.remove("eraseractive");
+  canvas.classList.add("pencilactive");
+  eraser.classList.add("pencilactive");
+  colorEl.classList.add("pencilactive");
+});
+
+// Dark/Light Mode
+
+const darkMode = document.getElementById("darkMode");
+const lightMode = document.getElementById("lightMode");
+
+darkMode.addEventListener("click", () => {
+  darkMode.classList.add("mode-active");
+  lightMode.classList.remove("mode-active");
+  lightMode.classList.add("rotate");
+});
+
+lightMode.addEventListener("click", () => {
+  lightMode.classList.add("mode-active");
+  darkMode.classList.remove("mode-active");
+  darkMode.classList.add("rotate");
 });
