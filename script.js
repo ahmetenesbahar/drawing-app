@@ -138,12 +138,12 @@ darkMode.addEventListener("click", () => {
   lightMode.classList.remove("mode-active");
   lightMode.classList.add("rotate");
   darkMode.classList.remove("rotate");
-  toolbox.style.backgroundColor = "#7A0BC0";
+  toolbox.style.backgroundColor = "#293462";
   document.body.style.backgroundImage = "url('darkModeBackgorund.svg')";
-  document.body.style.backgroundRepeat = "no-repeat";
+
   document.body.style.backgroundSize = "1920px 1080px";
-  canvas.style.borderColor = "#3F0071";
-  toolbox.style.borderColor = "#3F0071";
+  canvas.style.borderColor = "#293462";
+  toolbox.style.borderColor = "#293462";
 });
 
 lightMode.addEventListener("click", () => {
@@ -151,10 +151,10 @@ lightMode.addEventListener("click", () => {
   darkMode.classList.remove("mode-active");
   darkMode.classList.add("rotate");
   lightMode.classList.remove("rotate");
-  toolbox.style.backgroundColor = "steelblue";
+  toolbox.style.backgroundColor = "#293462";
   document.body.style.backgroundImage = "url('lightModeBackgorund.svg')";
-  document.body.style.backgroundRepeat = "no-repeat";
+
   document.body.style.backgroundSize = "1920px 1080px";
-  canvas.style.borderColor = "steelblue";
-  toolbox.style.borderColor = "steelblue";
+  canvas.style.borderColor = "#293462";
+  toolbox.style.borderColor = "#293462";
 });

@@ -11,7 +11,12 @@ body {
   height: 100vh;
   margin: 0;
   position: relative;
-  pointer-events: none;
+}
+::selection {
+  background: transparent;
+}
+::-moz-selection {
+  background: transparent;
 }
 .mode {
   display: flex;
@@ -25,18 +30,18 @@ body {
 }
 
 .dark-mode {
-  color: #001220;
+  color: #16213e;
 }
 
 canvas {
-  border: 2px solid #b8e8fc;
+  border: 2px solid #293462;
   cursor: url("pencilCursor.png") 2 48, pointer;
   background-color: #fff;
 }
 
 .toolbox {
-  background-color: #b8e8fc;
-  border: 1px solid #b8e8fc;
+  background-color: #293462;
+  border: 1px solid #293462;
   display: flex;
   width: 804px;
   padding: 1rem;
