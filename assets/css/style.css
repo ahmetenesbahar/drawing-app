@@ -3,22 +3,25 @@
 }
 
 body {
-  background: url("lightModeBackground.svg");
+  background: url("/assets/images/lightModeBackground.svg");
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   margin: 0;
   position: relative;
-  background-repeat: no-repeat;
+  max-height: 100vh;
 }
+
 ::selection {
   background: transparent;
 }
+
 ::-moz-selection {
   background: transparent;
 }
+
 .mode {
   display: flex;
   position: absolute;
@@ -26,6 +29,7 @@ body {
   right: 25px;
   cursor: pointer;
 }
+
 .light-mode {
   color: yellow;
 }
@@ -36,7 +40,7 @@ body {
 
 canvas {
   border: 2px solid #293462;
-  cursor: url("pencilCursor.png") 2 48, pointer;
+  cursor: url("/assets/images/pencilCursor.png") 2 48, pointer;
   background-color: #fff;
 }
 
@@ -44,7 +48,7 @@ canvas {
   background-color: #293462;
   border: 1px solid #293462;
   display: flex;
-  width: 804px;
+  width: 800px;
   padding: 1rem;
 }
 
@@ -85,21 +89,4 @@ canvas.pencilactive {
 .rotate {
   transform: rotate(360deg);
   transition: transform 1s linear;
-}
-
-@media only screen and (max-height: 900px) {
-  canvas {
-    width: 604px;
-    cursor: url("pencilCursor.png") 48 48, pointer;
-  }
-
-  .toolbox {
-    width: 604px;
-  }
-
-  .toolbox > * {
-    height: 30px;
-    width: 30px;
-    font-size: 1.5rem;
-  }
 }
