@@ -1,6 +1,6 @@
 ## Drawing App
 
-Bu proje HTML CSS JavaScirpt kullanarak geliştirdiğim çizim uygulamasıdır.
+Bu proje HTML CSS JavaScirpt kullanarak geliştirdiğim çizim uygulamasıdır. Aşağıdaki toolboxtan renk seçebilir, kaleminizin kalınlığını belirleyebilir ve beğenmediğiniz çizimleri tek tuşta silebilirsiniz :)
 
 ## Kurulum
 
@@ -15,7 +15,7 @@ Klonlama işleminin ardından live server açarak kodu önizleyebilirsiniz.
 ## Ekran Görüntüleri
 
 <div>
-<img src="https://github.com/ahmetenesbahar/login-register-page/blob/main/assets/screenshots/Login.png">
+<img src="https://github.com/ahmetenesbahar/drawing-app/blob/main/screenshots/drawingApp.png">
 
 </div>
 
