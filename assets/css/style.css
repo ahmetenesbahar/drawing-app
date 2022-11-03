@@ -74,7 +74,7 @@ canvas {
 }
 
 canvas.eraseractive {
-  cursor: url("assets/images/eraserCursor.png") 2 48, pointer;
+  cursor: url("/assets/images/eraserCursor.png") 2 48, pointer;
 }
 
 #color.eraseractive {
@@ -82,7 +82,7 @@ canvas.eraseractive {
 }
 
 canvas.pencilactive {
-  cursor: url("assets/images/pencilCursor.png") 2 48, pointer;
+  cursor: url("/assets/images/pencilCursor.png") 2 48, pointer;
 }
 
 .mode-active {
