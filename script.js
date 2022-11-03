@@ -140,7 +140,6 @@ darkMode.addEventListener("click", () => {
   darkMode.classList.remove("rotate");
   toolbox.style.backgroundColor = "#293462";
   document.body.style.backgroundImage = "url('darkModeBackground.svg')";
-
   document.body.style.backgroundSize = "1920px 1080px";
   canvas.style.borderColor = "#293462";
   toolbox.style.borderColor = "#293462";
@@ -153,7 +152,6 @@ lightMode.addEventListener("click", () => {
   lightMode.classList.remove("rotate");
   toolbox.style.backgroundColor = "#293462";
   document.body.style.backgroundImage = "url('lightModeBackground.svg')";
-
   document.body.style.backgroundSize = "1920px 1080px";
   canvas.style.borderColor = "#293462";
   toolbox.style.borderColor = "#293462";
