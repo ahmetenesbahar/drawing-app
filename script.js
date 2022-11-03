@@ -9,7 +9,7 @@ const clearEl = document.getElementById("clear");
 
 const ctx = canvas.getContext("2d");
 
-let size = 10;
+let size = 5;
 let isPressed = false;
 let color = "black";
 let x;
@@ -131,15 +131,30 @@ pencil.addEventListener("click", () => {
 
 const darkMode = document.getElementById("darkMode");
 const lightMode = document.getElementById("lightMode");
+const toolbox = document.getElementById("toolbox");
 
 darkMode.addEventListener("click", () => {
   darkMode.classList.add("mode-active");
   lightMode.classList.remove("mode-active");
   lightMode.classList.add("rotate");
+  darkMode.classList.remove("rotate");
+  toolbox.style.backgroundColor = "#7A0BC0";
+  document.body.style.backgroundImage = "url('darkModeBackgorund.svg')";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundSize = "1920px 1080px";
+  canvas.style.borderColor = "#3F0071";
+  toolbox.style.borderColor = "#3F0071";
 });
 
 lightMode.addEventListener("click", () => {
   lightMode.classList.add("mode-active");
   darkMode.classList.remove("mode-active");
   darkMode.classList.add("rotate");
+  lightMode.classList.remove("rotate");
+  toolbox.style.backgroundColor = "steelblue";
+  document.body.style.backgroundImage = "url('lightModeBackgorund.svg')";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundSize = "1920px 1080px";
+  canvas.style.borderColor = "steelblue";
+  toolbox.style.borderColor = "steelblue";
 });

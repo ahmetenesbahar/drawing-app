@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #f5f5f5;
+  background: url("lightModeBackground.svg");
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +11,7 @@ body {
   height: 100vh;
   margin: 0;
   position: relative;
+  pointer-events: none;
 }
 .mode {
   display: flex;
@@ -19,16 +20,23 @@ body {
   right: 25px;
   cursor: pointer;
 }
+.light-mode {
+  color: yellow;
+}
+
+.dark-mode {
+  color: #001220;
+}
 
 canvas {
-  border: 2px solid steelblue;
+  border: 2px solid #b8e8fc;
   cursor: url("pencilCursor.png") 2 48, pointer;
-  background-color: #f5f5f5;
+  background-color: #fff;
 }
 
 .toolbox {
-  background-color: steelblue;
-  border: 1px solid slateblue;
+  background-color: #b8e8fc;
+  border: 1px solid #b8e8fc;
   display: flex;
   width: 804px;
   padding: 1rem;
