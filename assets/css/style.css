@@ -66,10 +66,10 @@ canvas {
   width: 100%;
   align-items: center;
   justify-content: center;
-  padding: .2rem;
+  padding: 0.2rem;
 }
 
-.toolbox>* {
+.toolbox > * {
   background-color: #fff;
   border: none;
   display: inline-flex;
@@ -83,7 +83,7 @@ canvas {
   cursor: pointer;
 }
 
-.toolbox>*:last-child {
+.toolbox > *:last-child {
   margin-left: auto;
 }
 
