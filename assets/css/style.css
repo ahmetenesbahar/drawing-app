@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("/assets/images/lightModeBackground.svg");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: 0;
+  position: relative;
+  max-height: 100vh;
+}
+
+::selection {
+  background: transparent;
+}
+
+::-moz-selection {
+  background: transparent;
+}
+
+.mode {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.light-mode {
+  color: yellow;
+}
+
+.dark-mode {
+  color: #16213e;
+}
+
+canvas {
+  border: 2px solid #293462;
+  cursor: url("/assets/images/pencilCursor.png") 2 48, pointer;
+  background-color: #fff;
+}
+
+.toolbox {
+  background-color: #293462;
+  border: 1px solid #293462;
+  display: flex;
+  width: 800px;
+  padding: 1rem;
+}
+
+.toolbox>* {
+  background-color: #fff;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  height: 50px;
+  width: 50px;
+  margin: 0.25rem;
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+.toolbox>*:last-child {
+  margin-left: auto;
+}
+
+canvas.eraseractive {
+  cursor: url("eraserCursor.png") 2 48, pointer;
+}
+
+#color.eraseractive {
+  cursor: not-allowed;
+}
+
+canvas.pencilactive {
+  cursor: url("pencilCursor.png") 2 48, pointer;
+}
+
+.mode-active {
+  visibility: hidden;
+}
+
+.rotate {
+  transform: rotate(360deg);
+  transition: transform 1s linear;
+}
