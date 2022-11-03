@@ -139,7 +139,7 @@ darkMode.addEventListener("click", () => {
   lightMode.classList.add("rotate");
   darkMode.classList.remove("rotate");
   toolbox.style.backgroundColor = "#293462";
-  document.body.style.backgroundImage = "url('darkModeBackgorund.svg')";
+  document.body.style.backgroundImage = "url('darkModeBackground.svg')";
 
   document.body.style.backgroundSize = "1920px 1080px";
   canvas.style.borderColor = "#293462";
