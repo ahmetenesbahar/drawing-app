@@ -39,9 +39,12 @@ body {
 }
 
 canvas {
+  display: flex;
   border: 2px solid #293462;
   cursor: url("/assets/images/pencilCursor.png") 2 48, pointer;
   background-color: #fff;
+  margin-top: 3rem;
+  width: 800px;
 }
 
 .toolbox {
@@ -71,7 +74,7 @@ canvas {
 }
 
 canvas.eraseractive {
-  cursor: url("eraserCursor.png") 2 48, pointer;
+  cursor: url("assets/images/eraserCursor.png") 2 48, pointer;
 }
 
 #color.eraseractive {
@@ -79,7 +82,7 @@ canvas.eraseractive {
 }
 
 canvas.pencilactive {
-  cursor: url("pencilCursor.png") 2 48, pointer;
+  cursor: url("assets/images/pencilCursor.png") 2 48, pointer;
 }
 
 .mode-active {

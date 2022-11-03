@@ -1,34 +1,34 @@
-const canvas = document.getElementById('canvas');
-const increaseBtn = document.getElementById('increase');
-const decreaseBtn = document.getElementById('decrease');
-const sizeEl = document.getElementById('size');
-const colorEl = document.getElementById('color');
-const clearEl = document.getElementById('clear');
+const canvas = document.getElementById("canvas");
+const increaseBtn = document.getElementById("increase");
+const decreaseBtn = document.getElementById("decrease");
+const sizeEl = document.getElementById("size");
+const colorEl = document.getElementById("color");
+const clearEl = document.getElementById("clear");
 
 //Core Drawing Functionality (with some research)
 
-const ctx = canvas.getContext('2d');
+const ctx = canvas.getContext("2d");
 
 let size = 5;
 let isPressed = false;
-let color = 'black';
+let color = "black";
 let x;
 let y;
 let fakeSize = 1;
 
-canvas.addEventListener('mousedown', e => {
+canvas.addEventListener("mousedown", (e) => {
   isPressed = true;
   x = e.offsetX;
   y = e.offsetY;
 });
 
-canvas.addEventListener('mouseup', e => {
+canvas.addEventListener("mouseup", (e) => {
   isPressed = false;
   x = undefined;
   y = undefined;
 });
 
-canvas.addEventListener('mousemove', e => {
+canvas.addEventListener("mousemove", (e) => {
   if (isPressed) {
     const x2 = e.offsetX;
     const y2 = e.offsetY;
@@ -62,7 +62,7 @@ function updateSizeOnScreen() {
   sizeEl.innerHTML = fakeSize;
 }
 
-increaseBtn.addEventListener('click', () => {
+increaseBtn.addEventListener("click", () => {
   size += 5;
   fakeSize++;
   if (fakeSize > 10) {
@@ -76,7 +76,7 @@ increaseBtn.addEventListener('click', () => {
   updateSizeOnScreen();
 });
 
-decreaseBtn.addEventListener('click', () => {
+decreaseBtn.addEventListener("click", () => {
   size -= 5;
   fakeSize--;
   if (fakeSize < 1) {
@@ -90,73 +90,73 @@ decreaseBtn.addEventListener('click', () => {
   updateSizeOnScreen();
 });
 
-colorEl.addEventListener('change', e => {
+colorEl.addEventListener("change", (e) => {
   color = e.target.value;
 });
 
-clearEl.addEventListener('click', () => {
+clearEl.addEventListener("click", () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
 
 //Eraser and Pencil Actions (my own algorithm)
 
-const eraser = document.getElementById('eraser');
-const pencil = document.getElementById('pencil');
+const eraser = document.getElementById("eraser");
+const pencil = document.getElementById("pencil");
 
-eraser.addEventListener('click', () => {
-  localStorage.setItem('colorEl', JSON.stringify(color));
-  color = '#f5f5f5';
+eraser.addEventListener("click", () => {
+  localStorage.setItem("colorEl", JSON.stringify(color));
+  color = "#fff";
   colorEl.disabled = true;
-  canvas.classList.add('eraseractive');
-  eraser.classList.add('eraseractive');
-  colorEl.classList.add('eraseractive');
-  canvas.classList.remove('pencilactive');
-  eraser.classList.remove('pencilactive');
-  colorEl.classList.remove('pencilactive');
+  canvas.classList.add("eraseractive");
+  eraser.classList.add("eraseractive");
+  colorEl.classList.add("eraseractive");
+  canvas.classList.remove("pencilactive");
+  eraser.classList.remove("pencilactive");
+  colorEl.classList.remove("pencilactive");
 });
 
-pencil.addEventListener('click', () => {
-  JSON.parse(localStorage.getItem('colorEl'));
+pencil.addEventListener("click", () => {
+  JSON.parse(localStorage.getItem("colorEl"));
   color = colorEl.value;
   colorEl.disabled = false;
-  canvas.classList.remove('eraseractive');
-  eraser.classList.remove('eraseractive');
-  colorEl.classList.remove('eraseractive');
-  canvas.classList.add('pencilactive');
-  eraser.classList.add('pencilactive');
-  colorEl.classList.add('pencilactive');
+  canvas.classList.remove("eraseractive");
+  eraser.classList.remove("eraseractive");
+  colorEl.classList.remove("eraseractive");
+  canvas.classList.add("pencilactive");
+  eraser.classList.add("pencilactive");
+  colorEl.classList.add("pencilactive");
 });
 
 // Dark/Light Mode
 
-const darkMode = document.getElementById('darkMode');
-const lightMode = document.getElementById('lightMode');
-const toolbox = document.getElementById('toolbox');
+const darkMode = document.getElementById("darkMode");
+const lightMode = document.getElementById("lightMode");
+const toolbox = document.getElementById("toolbox");
 
-darkMode.addEventListener('click', () => {
-  darkMode.classList.add('mode-active');
-  lightMode.classList.remove('mode-active');
-  lightMode.classList.add('rotate');
-  darkMode.classList.remove('rotate');
-  toolbox.style.backgroundColor = '#293462';
+darkMode.addEventListener("click", () => {
+  darkMode.classList.add("mode-active");
+  lightMode.classList.remove("mode-active");
+  lightMode.classList.add("rotate");
+  darkMode.classList.remove("rotate");
+  toolbox.style.backgroundColor = "#293462";
   document.body.style.backgroundImage =
     "url('/assets/images/darkModeBackground.svg')";
 
-  document.body.style.backgroundSize = '1920px 1080px';
-  canvas.style.borderColor = '#293462';
-  toolbox.style.borderColor = '#293462';
+  document.body.style.backgroundSize = "1920px 1080px";
+  canvas.style.borderColor = "#293462";
+  toolbox.style.borderColor = "#293462";
 });
 
-lightMode.addEventListener('click', () => {
-  lightMode.classList.add('mode-active');
-  darkMode.classList.remove('mode-active');
-  darkMode.classList.add('rotate');
-  lightMode.classList.remove('rotate');
-  toolbox.style.backgroundColor = '#293462';
+lightMode.addEventListener("click", () => {
+  lightMode.classList.add("mode-active");
+  darkMode.classList.remove("mode-active");
+  darkMode.classList.add("rotate");
+  lightMode.classList.remove("rotate");
+  toolbox.style.backgroundColor = "#293462";
   document.body.style.backgroundImage =
     "url('/assets/images/lightModeBackground.svg')";
 
-  document.body.style.backgroundSize = '1920px 1080px';
-  canvas.style.borderColor = '#293462';
-  toolbox.style.borderColor = '#293462';
+  document.body.style.backgroundSize = "1920px 1080px";
+  canvas.style.borderColor = "#293462";
+  toolbox.style.borderColor = "#293462";
 });
