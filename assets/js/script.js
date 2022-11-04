@@ -12,14 +12,14 @@ const ctx = canvas.getContext("2d");
 let size = 5;
 let isPressed = false;
 let color = "black";
-let x;
-let y;
+let x = 0;
+let y = 0;
 let fakeSize = 1;
 
 canvas.addEventListener("mousedown", (e) => {
   isPressed = true;
-  x = e.offsetX;
-  y = e.offsetY;
+  x = e.offsetX * (canvas.width / ctx.canvas.getBoundingClientRect().width);
+  y = e.offsetY * (canvas.height / ctx.canvas.getBoundingClientRect().height);
 });
 
 canvas.addEventListener("mouseup", (e) => {
@@ -30,8 +30,10 @@ canvas.addEventListener("mouseup", (e) => {
 
 canvas.addEventListener("mousemove", (e) => {
   if (isPressed) {
-    const x2 = e.offsetX;
-    const y2 = e.offsetY;
+    const x2 =
+      e.offsetX * (canvas.width / ctx.canvas.getBoundingClientRect().width);
+    const y2 =
+      e.offsetY * (canvas.height / ctx.canvas.getBoundingClientRect().height);
 
     drawCircle(x2, y2);
     drawLine(x, y, x2, y2);
