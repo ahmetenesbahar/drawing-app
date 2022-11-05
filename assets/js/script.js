@@ -106,7 +106,6 @@ const eraser = document.getElementById("eraser");
 const pencil = document.getElementById("pencil");
 
 eraser.addEventListener("click", () => {
-  localStorage.setItem("colorEl", JSON.stringify(color));
   color = "#fff";
   colorEl.disabled = true;
   canvas.classList.add("eraseractive");
@@ -118,7 +117,6 @@ eraser.addEventListener("click", () => {
 });
 
 pencil.addEventListener("click", () => {
-  JSON.parse(localStorage.getItem("colorEl"));
   color = colorEl.value;
   colorEl.disabled = false;
   canvas.classList.remove("eraseractive");
@@ -147,6 +145,8 @@ darkMode.addEventListener("click", () => {
   document.body.style.backgroundSize = "1920px 1080px";
   canvas.style.borderColor = "#293462";
   toolbox.style.borderColor = "#293462";
+  darkMode.value = 0;
+  localStorage.setItem("pageMode", JSON.stringify(darkMode));
 });
 
 lightMode.addEventListener("click", () => {
@@ -161,4 +161,40 @@ lightMode.addEventListener("click", () => {
   document.body.style.backgroundSize = "1920px 1080px";
   canvas.style.borderColor = "#293462";
   toolbox.style.borderColor = "#293462";
+  lightMode.value = 1;
+  localStorage.setItem("pageMode", JSON.stringify(lightMode));
 });
+
+window.onload = function () {
+  let theme = JSON.parse(localStorage.getItem("pageMode"));
+
+  if (theme.value == 0) {
+    darkMode.classList.add("mode-active");
+    lightMode.classList.remove("mode-active");
+    lightMode.classList.add("rotate");
+    darkMode.classList.remove("rotate");
+    toolbox.style.backgroundColor = "#293462";
+    document.body.style.backgroundImage =
+      "url('/assets/images/darkModeBackground.svg')";
+
+    document.body.style.backgroundSize = "1920px 1080px";
+    canvas.style.borderColor = "#293462";
+    toolbox.style.borderColor = "#293462";
+    darkMode.value = 0;
+    localStorage.setItem("pageMode", JSON.stringify(darkMode));
+  } else if (theme.value == 1) {
+    lightMode.classList.add("mode-active");
+    darkMode.classList.remove("mode-active");
+    darkMode.classList.add("rotate");
+    lightMode.classList.remove("rotate");
+    toolbox.style.backgroundColor = "#293462";
+    document.body.style.backgroundImage =
+      "url('/assets/images/lightModeBackground.svg')";
+
+    document.body.style.backgroundSize = "1920px 1080px";
+    canvas.style.borderColor = "#293462";
+    toolbox.style.borderColor = "#293462";
+    lightMode.value = 1;
+    localStorage.setItem("pageMode", JSON.stringify(lightMode));
+  }
+};
