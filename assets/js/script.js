@@ -167,7 +167,11 @@ lightMode.addEventListener("click", () => {
 
 window.onload = function () {
   let theme = JSON.parse(localStorage.getItem("pageMode"));
-
+  if (theme == null) {
+    lightMode.value = 1;
+    localStorage.setItem("pageMode", JSON.stringify(lightMode));
+  }
+  theme = JSON.parse(localStorage.getItem("pageMode"));
   if (theme.value == 0) {
     darkMode.classList.add("mode-active");
     lightMode.classList.remove("mode-active");
