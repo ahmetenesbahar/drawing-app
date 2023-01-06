@@ -1,6 +1,6 @@
 ## Drawing App
 
-Bu proje HTML CSS JavaScirpt kullanarak geliştirdiğim çizim uygulamasıdır.
+Bu proje HTML CSS JavaScript kullanarak geliştirdiğim çizim uygulamasıdır.
 
 ## Kurulum
 
