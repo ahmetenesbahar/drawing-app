@@ -142,7 +142,9 @@ darkMode.addEventListener("click", () => {
   document.body.style.backgroundImage =
     "url('/assets/images/darkModeBackground.svg')";
 
-  document.body.style.backgroundSize = "1920px 1080px";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundAttachment = "fixed"
   canvas.style.borderColor = "#293462";
   toolbox.style.borderColor = "#293462";
   darkMode.value = 0;
@@ -158,7 +160,9 @@ lightMode.addEventListener("click", () => {
   document.body.style.backgroundImage =
     "url('/assets/images/lightModeBackground.svg')";
 
-  document.body.style.backgroundSize = "1920px 1080px";
+  document.body.style.backgroundRepeat = "no-repeat";
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundAttachment = "fixed"
   canvas.style.borderColor = "#293462";
   toolbox.style.borderColor = "#293462";
   lightMode.value = 1;
@@ -181,7 +185,9 @@ window.onload = function () {
     document.body.style.backgroundImage =
       "url('/assets/images/darkModeBackground.svg')";
 
-    document.body.style.backgroundSize = "1920px 1080px";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed"
     canvas.style.borderColor = "#293462";
     toolbox.style.borderColor = "#293462";
     darkMode.value = 0;
@@ -195,7 +201,9 @@ window.onload = function () {
     document.body.style.backgroundImage =
       "url('/assets/images/lightModeBackground.svg')";
 
-    document.body.style.backgroundSize = "1920px 1080px";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundAttachment = "fixed"
     canvas.style.borderColor = "#293462";
     toolbox.style.borderColor = "#293462";
     lightMode.value = 1;
